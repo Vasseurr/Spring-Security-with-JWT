@@ -1,17 +1,25 @@
 package com.vasseurr.SecurityJWT.security;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.vasseurr.SecurityJWT.security.jwt.AuthEntryPointJwt;
+import com.vasseurr.SecurityJWT.security.jwt.AuthTokenFilter;
+import com.vasseurr.SecurityJWT.security.services.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -24,12 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
 	
-	@Bean AuthTokenFilter authenticationJwtTokenFilter() {
+	@Bean 
+	AuthTokenFilter authenticationJwtTokenFilter() {
 		return new AuthTokenFilter();
 	}
 	
 	@Override
-	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
 	
@@ -53,6 +62,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			  .antMatchers("/api/test/**").permitAll()
 			  .anyRequest().authenticated();
 		
-		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 }

@@ -82,7 +82,7 @@ public class UserDetailsImpl implements UserDetails{
 		return id;
 	}
 	
-	public String email() {
+	public String getEmail() {
 		return email;
 	}
 	
