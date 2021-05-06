@@ -3,7 +3,6 @@ package com.vasseurr.SecurityJWT.controllers;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
@@ -80,6 +79,7 @@ public class AuthController {
 					.body(new MessageResponse("Error: Email is already taken!"));
 		}
 		
+		//Create a new user's account
 		User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()));
 	
 		Set<String> strRoles = signUpRequest.getRole();
@@ -108,11 +108,10 @@ public class AuthController {
 					break;
 				
 				default:
-					Role userRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 						.orElseThrow(() -> new RuntimeException("Error: Role is not found!"));
 					roles.add(userRole);
 					
-					break;
 				}
 			});
 		}
