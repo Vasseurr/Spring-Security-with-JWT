@@ -74,9 +74,13 @@ My name is Okan and I'm a student of Computer Engineer. You can find me on [![Li
       <p>We need sign in to access protected resources.</p>
       <p>POST /api/auth/signin</p>
       <img src="https://user-images.githubusercontent.com/67058617/117442876-044f3680-af40-11eb-92d0-4290c5c035be.png" width="700" height="350"/>
-      <p>After sign in, we can access resources with token and its type depends on our roles.</p>
+      <p>After signing in, we can access resources with token and its type depends on our roles.</p>
       <img src="https://user-images.githubusercontent.com/67058617/117443094-5001e000-af40-11eb-842b-8b25e109ec1e.png" width="700" height="350"/>
       <img src="https://user-images.githubusercontent.com/67058617/117443096-51330d00-af40-11eb-905d-98798dc623ed.png" width="700" height="350"/>
+      <p>We have no permission to access admin content, so we need sign in with admin account.</p>
+      <img src="https://user-images.githubusercontent.com/67058617/117454323-b130b000-af4e-11eb-9b08-f30b47ce1c02.png" width="700" height="350"/>
+      <img src="https://user-images.githubusercontent.com/67058617/117454326-b1c94680-af4e-11eb-8ccb-0704a42dad38.png" width="700" height="350"/>
+      <p>After signing in, we can access admin content.</p>
       <img src="https://user-images.githubusercontent.com/67058617/117443098-51cba380-af40-11eb-88fb-54a55a5f076e.png" width="700" height="350"/>
   </p>
   
