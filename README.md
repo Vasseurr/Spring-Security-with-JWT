@@ -7,7 +7,7 @@ My name is Okan and I'm a student of Computer Engineer. You can find me on [![Li
   <li>JWT with Spring Security</li>
   <li>Registration and Login</li>
   <li>API</li>
-  <li>Private and protected resource</li>
+  <li>Private and protected resources</li>
 </ul>
 
 ## API Methods
