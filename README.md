@@ -43,9 +43,9 @@ My name is Okan and I'm a student of Computer Engineer. You can find me on [![Li
   <p>
     <p>We can register with /signup API 
       <ul>
-        <li>-admin with ROLE_ADMIN</li>
-        <li>-mod with ROLE_MODERATOR</li>
-        <li>-user with ROLE_USER</li>
+        <li>admin with ROLE_ADMIN</li>
+        <li>mod with ROLE_MODERATOR</li>
+        <li>user with ROLE_USER</li>
       </ul>
     </p>
       <img src="https://user-images.githubusercontent.com/67058617/117378771-c110ab80-aede-11eb-859b-2820194cbfc7.png" width="700" height="350"/>
